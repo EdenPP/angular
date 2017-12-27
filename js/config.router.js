@@ -22,7 +22,7 @@ app.config(['$stateProvider', '$urlRouterProvider', function ($stateProvider, $u
             controller: 'product-controller',
             resolve: {
                 deps: ['$ocLazyLoad', function ($ocLazyLoad) {
-                    $ocLazyLoad.load([
+                    return $ocLazyLoad.load([
                         'css/product.css',
                         'js/controllers/product.js'
                     ])
