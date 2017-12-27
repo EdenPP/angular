@@ -15,6 +15,19 @@ app.config(['$stateProvider', '$urlRouterProvider', function ($stateProvider, $u
                     ]);
                 }]
             }
+        })
+        .state('product', {
+            url: '/product',
+            templateUrl: 'tpl/product.html',
+            controller: 'product-controller',
+            resolve: {
+                deps: ['$ocLazyLoad', function ($ocLazyLoad) {
+                    $ocLazyLoad.load([
+                        'css/product.css',
+                        'js/controllers/product.js'
+                    ])
+                }]
+            }
         });
     
 }]);
